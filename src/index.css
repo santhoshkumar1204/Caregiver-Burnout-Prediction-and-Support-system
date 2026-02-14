@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 195 30% 97%;
+    --foreground: 200 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    --primary: 187 65% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 25% 93%;
+    --secondary-foreground: 200 25% 15%;
+
+    --muted: 195 20% 94%;
+    --muted-foreground: 200 10% 45%;
+
+    --accent: 152 45% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 30 90% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 152 55% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 195 20% 88%;
+    --input: 195 20% 88%;
+    --ring: 187 65% 38%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 195 30% 97%;
+    --sidebar-foreground: 200 25% 25%;
+    --sidebar-primary: 187 65% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 30% 93%;
+    --sidebar-accent-foreground: 200 25% 15%;
+    --sidebar-border: 195 20% 88%;
+    --sidebar-ring: 187 65% 38%;
+
+    --glass-bg: 195 30% 97% / 0.7;
+    --glass-border: 195 20% 88% / 0.5;
+  }
+
+  .dark {
+    --background: 200 25% 8%;
+    --foreground: 195 20% 92%;
+    --card: 200 20% 12%;
+    --card-foreground: 195 20% 92%;
+    --popover: 200 20% 12%;
+    --popover-foreground: 195 20% 92%;
+    --primary: 187 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 20% 16%;
+    --secondary-foreground: 195 20% 92%;
+    --muted: 200 15% 18%;
+    --muted-foreground: 195 15% 60%;
+    --accent: 152 45% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 200 15% 20%;
+    --input: 200 15% 20%;
+    --ring: 187 65% 45%;
+    --sidebar-background: 200 25% 8%;
+    --sidebar-foreground: 195 20% 80%;
+    --sidebar-primary: 187 65% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 15% 14%;
+    --sidebar-accent-foreground: 195 20% 92%;
+    --sidebar-border: 200 15% 20%;
+    --sidebar-ring: 187 65% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30 shadow-lg;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-md rounded-2xl;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(187 65% 38%), hsl(152 45% 42%));
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(195 30% 97%), hsl(187 20% 92%), hsl(195 30% 97%));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(187 65% 38%), hsl(152 45% 42%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-hover {
+    @apply transition-all duration-300;
+  }
+  .glow-hover:hover {
+    box-shadow: 0 8px 30px -8px hsl(187 65% 38% / 0.35);
+    transform: translateY(-2px);
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .fade-up-delay-1 { animation-delay: 0.1s; }
+  .fade-up-delay-2 { animation-delay: 0.2s; }
+  .fade-up-delay-3 { animation-delay: 0.3s; }
+  .fade-up-delay-4 { animation-delay: 0.4s; }
+
+  .counter-animate {
+    animation: countUp 1.5s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
