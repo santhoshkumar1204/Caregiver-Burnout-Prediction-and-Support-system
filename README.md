@@ -75,15 +75,15 @@ This leads to:
 
 ## ⚡ Installation & Setup
 
-### 1️⃣ Clone Repository
+
 
 ```bash
 git clone https://github.com/santhoshkumar1204/Caregiver-Burnout-Prediction-and-Support-system.git
 cd Caregiver-Burnout-Prediction-and-Support-system
-2️⃣ Install Frontend Dependencies
+
 npm install
 npm run dev
-3️⃣ Backend Setup (Optional / Future Integration)
+
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
